@@ -1,5 +1,5 @@
 name:                storable-complex
-version:             0.2.2
+version:             0.2.2.0.1
 synopsis:            Storable instance for Complex
 description:         Provides a Storable instance for Complex which is binary
 		     compatible with C99, C++ and Fortran complex data types.
@@ -31,9 +31,5 @@ flag instanceInBase
 
 library
   exposed-modules: Foreign.Storable.Complex
-  if flag(instanceInBase)
-    build-depends:  base >= 4.8 && < 5
-    hs-source-dirs: in-base
-  else
-    build-depends:  base  < 4.8 && >= 4.4
-    hs-source-dirs: out-of-base
+  build-depends:  base >= 4 && < 5, base-orphans >=0.5.1
+  hs-source-dirs: in-base
